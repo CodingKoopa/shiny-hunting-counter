@@ -1,0 +1,7 @@
+#Don't commit the following files:
+
+#Object files
+*.o
+
+#.pro.user files
+*.pro.user
