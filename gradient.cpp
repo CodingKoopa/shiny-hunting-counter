@@ -1,5 +1,4 @@
 #include <QColorDialog>
-#include <QDebug>
 
 #include "gradient.h"
 
@@ -18,19 +17,22 @@ QBrush makeGradient(int x, int y, int transitionPoint, QColor gradColor1, QColor
     gradient.setColorAt(0, gradColor1);
     gradient.setColorAt(1, gradColor2);
 
-    //make pattern based off of gradient
+    //make and return pattern based off of gradient
     QBrush pattern(gradient);
     return pattern;
 }
 
+//gradient color 1
 void CounterWindow::on_pickGradColor1_clicked()
 {
+    //open color window
     gradColor1 = QColorDialog::getColor(Qt::black, this);
-    qDebug() << gradColor1.name();
 }
 
+//gradient color 2
 void CounterWindow::on_pickGradColor2_clicked()
 {
+    //open color window
     gradColor2 = QColorDialog::getColor(Qt::black, this);
 }
 
@@ -52,5 +54,6 @@ void CounterWindow::on_switchGradColors_clicked()
     gradColor1 = color2Orig;
     gradColor2 = color1Orig;
 
+    //refresh
     update();
 }

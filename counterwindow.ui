@@ -7,17 +7,17 @@
     <x>0</x>
     <y>0</y>
     <width>496</width>
-    <height>441</height>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>CounterWindow</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <layout class="QFormLayout" name="formLayout">
+   <item row="1" column="0">
+    <layout class="QFormLayout" name="spacingLay">
      <item row="0" column="0" colspan="2">
-      <spacer name="horizontalSpacer_2">
+      <spacer name="spacing">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
@@ -31,8 +31,8 @@
      </item>
     </layout>
    </item>
-   <item row="0" column="1">
-    <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item row="1" column="1">
+    <layout class="QVBoxLayout" name="encounterIncreasers">
      <item>
       <widget class="QPushButton" name="encounterButton">
        <property name="text">
@@ -45,8 +45,8 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="0" colspan="2">
-    <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item row="2" column="0" colspan="2">
+    <layout class="QVBoxLayout" name="prettyMuchEverythingLay">
      <item>
       <layout class="QHBoxLayout" name="optionsLay">
        <item>
@@ -200,16 +200,16 @@
       </layout>
      </item>
      <item>
-      <widget class="Line" name="line">
+      <widget class="Line" name="textPosAndFillingSep">
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="fillingLay">
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <layout class="QVBoxLayout" name="solidLay">
          <item>
           <widget class="QRadioButton" name="solidBox">
            <property name="text">
@@ -230,14 +230,14 @@
         </layout>
        </item>
        <item>
-        <widget class="Line" name="line_2">
+        <widget class="Line" name="fillingSep1">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
         </widget>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
+        <layout class="QVBoxLayout" name="gradLay">
          <item>
           <widget class="QRadioButton" name="gradientBox">
            <property name="text">
@@ -246,21 +246,14 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pickGradColor1">
+          <widget class="QPushButton" name="pickGradColor2">
            <property name="text">
             <string>Pick Upper Color</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_2">
-           <property name="text">
-            <string/>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pickGradColor2">
+          <widget class="QPushButton" name="pickGradColor1">
            <property name="text">
             <string>Pick Lower Color</string>
            </property>
@@ -288,6 +281,20 @@
       </layout>
      </item>
     </layout>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="aboutButton">
+     <property name="text">
+      <string>About</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="aboutLabel">
+     <property name="text">
+      <string>Pokemon Shiny Hunting Counter v1.0</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

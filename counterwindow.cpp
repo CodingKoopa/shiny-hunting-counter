@@ -5,17 +5,22 @@
 
 #include "counterwindow.h"
 #include "ui_counterwindow.h"
+#include "about.h"
 #include "gradient.h"
 
 CounterWindow::CounterWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CounterWindow)
 {
+    //set up ui
     ui->setupUi(this);
 
-    QWidget::setWindowIcon(QIcon(":/icon.png"));
-    QWidget::setWindowTitle("Shiny Hunting Counter");
+    //set window icon and title
+    this->setWindowIcon(QIcon(":/icon.png"));
+    this->setWindowTitle("Shiny Hunting Counter");
 
+    //set maximum spinbox
+    //afaik, 2147483647 is the largest 32-bit number
     ui->encounterBox->setMaximum(2147483647);
     ui->fontSize->setMaximum(2147483647);
     ui->outlineWidth->setMaximum(2147483647);
@@ -23,14 +28,17 @@ CounterWindow::CounterWindow(QWidget *parent) :
     ui->yBox->setMaximum(2147483647);
     ui->gradTransPoint->setMaximum(2147483647);
 
+    //set default values
     ui->fontSize->setValue(30);
     ui->xBox->setValue(50);
     ui->yBox->setValue(50);
     ui->outlineWidth->setValue(2);
-
-    count = 0;
     solidColor = Qt::black;
 
+    //reset count
+    count = 0;
+
+    //get rid of help bar
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
@@ -39,6 +47,7 @@ CounterWindow::~CounterWindow()
     delete ui;
 }
 
+//PAINTING :OOOOOO
 void CounterWindow::paintEvent(QPaintEvent *event)
 {
     //make the canvas
@@ -46,9 +55,6 @@ void CounterWindow::paintEvent(QPaintEvent *event)
 
     //turn on anti-aliasing (higher quality)
     canvas.setRenderHints(QPainter::Antialiasing, QPainter::HighQualityAntialiasing);
-
-    //make rectangle
-    QRect rec(x, y, 250, 150);
 
     //grab font info
     QFont font = ui->font->currentText();
@@ -84,7 +90,7 @@ void CounterWindow::paintEvent(QPaintEvent *event)
     //outline
     if (ui->useOutline->isChecked() == true)
     {
-        //make brush
+        //make brush, grab color(TODO: rename that variable)
         QBrush brush(color);
 
         //make stroke path
@@ -94,6 +100,7 @@ void CounterWindow::paintEvent(QPaintEvent *event)
         //make path based off of stroke path
         QPainterPath outline(outlineStrokePath.createStroke(textPath));
 
+        //use outside stroke instead of center
         QPainterPath finalStroke = outline.subtracted(textPath);
 
         //fill in the path
@@ -101,25 +108,9 @@ void CounterWindow::paintEvent(QPaintEvent *event)
     }
 }
 
-void CounterWindow::on_encounterButton_clicked()
+//about button
+void CounterWindow::on_aboutButton_clicked()
 {
-    count++;
-    ui->encounterBox->setValue(count);
-    update();
-}
-
-void CounterWindow::on_encounterBox_valueChanged(int arg1)
-{
-    count = arg1;
-    update();
-}
-
-void CounterWindow::on_pickSolidColor_clicked()
-{
-    solidColor = QColorDialog::getColor(Qt::black, this);
-}
-
-void CounterWindow::on_solidBox_clicked()
-{
-    update();
+    About *aboutWindow = new About();
+    aboutWindow->show();
 }

@@ -35,22 +35,15 @@ private:
 protected:
     void paintEvent(QPaintEvent *event);
 
-private slots:
-    void on_encounterButton_clicked();
-    void on_font_currentIndexChanged(const QString &arg1);
-    void on_fontSize_valueChanged(int arg1);
+private slots:   
+    //textpos.cpp:
+    void on_xBox_valueChanged(int arg1);
+    void on_yBox_valueChanged(int arg1);
+
     void on_up_clicked();
     void on_left_clicked();
     void on_right_clicked();
     void on_down_clicked();
-    void on_outlineWidth_valueChanged(int arg1);
-    void on_outlineColorChart_clicked();
-    void on_useOutline_clicked(bool checked);
-    void on_xBox_valueChanged(int arg1);
-    void on_yBox_valueChanged(int arg1);
-    void on_encounterBox_valueChanged(int arg1);
-    void on_pickSolidColor_clicked();
-    void on_solidBox_clicked();
 
     //gradient.cpp:
     void on_gradientBox_clicked();
@@ -58,6 +51,26 @@ private slots:
     void on_pickGradColor2_clicked();
     void on_gradTransPoint_valueChanged(int arg1);
     void on_switchGradColors_clicked();
+
+    //outline.cpp:
+    void on_outlineColorChart_clicked();
+    void on_useOutline_clicked(bool checked);
+    void on_outlineWidth_valueChanged(int arg1);
+
+    //solid.cpp:
+    void on_pickSolidColor_clicked();
+    void on_solidBox_clicked();
+
+    //font.cpp:
+    void on_font_currentIndexChanged(const QString &arg1);
+    void on_fontSize_valueChanged(int arg1);
+
+    //encounter.cpp:
+    void on_encounterButton_clicked();
+    void on_encounterBox_valueChanged(int arg1);
+
+    //counterwindow.cpp:
+    void on_aboutButton_clicked();
 };
 
 #endif // COUNTERWINDOW_H

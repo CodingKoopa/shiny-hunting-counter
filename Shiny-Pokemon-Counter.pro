@@ -18,12 +18,17 @@ SOURCES += main.cpp\
     gradient.cpp \
     textpos.cpp \
     font.cpp \
-    outline.cpp
+    outline.cpp \
+    about.cpp \
+    encounter.cpp \
+    solid.cpp
 
 HEADERS  += counterwindow.h \
-    gradient.h
+    gradient.h \
+    about.h
 
-FORMS    += counterwindow.ui
+FORMS    += counterwindow.ui \
+    about.ui
 
 DISTFILES +=
 
