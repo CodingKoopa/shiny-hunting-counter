@@ -1,13 +1,13 @@
 #ifndef COUNTERWINDOW_H
 #define COUNTERWINDOW_H
 
-#include <QDialog>
+#include <QMainWindow>
 
 namespace Ui {
 class CounterWindow;
 }
 
-class CounterWindow : public QDialog
+class CounterWindow : public QMainWindow
 {
     Q_OBJECT
 

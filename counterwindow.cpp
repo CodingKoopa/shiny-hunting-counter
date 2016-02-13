@@ -9,7 +9,7 @@
 #include "gradient.h"
 
 CounterWindow::CounterWindow(QWidget *parent) :
-    QDialog(parent),
+    QMainWindow(parent),
     ui(new Ui::CounterWindow)
 {
     //set up ui

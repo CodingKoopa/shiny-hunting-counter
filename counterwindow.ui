@@ -1,304 +1,331 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>CounterWindow</class>
- <widget class="QDialog" name="CounterWindow">
+ <widget class="QMainWindow" name="CounterWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>496</width>
-    <height>460</height>
+    <height>515</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>CounterWindow</string>
+   <string>MainWindow</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0">
-    <layout class="QFormLayout" name="spacingLay">
-     <item row="0" column="0" colspan="2">
-      <spacer name="spacing">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="1">
-    <layout class="QVBoxLayout" name="encounterIncreasers">
-     <item>
-      <widget class="QPushButton" name="encounterButton">
-       <property name="text">
-        <string>Encounter</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSpinBox" name="encounterBox"/>
-     </item>
-    </layout>
-   </item>
-   <item row="2" column="0" colspan="2">
-    <layout class="QVBoxLayout" name="prettyMuchEverythingLay">
-     <item>
-      <layout class="QHBoxLayout" name="optionsLay">
-       <item>
-        <layout class="QVBoxLayout" name="fontAndFontSizeAndOutlineAndColorLay">
-         <item>
-          <layout class="QHBoxLayout" name="fontAndFontSizeLay">
-           <item>
-            <layout class="QVBoxLayout" name="fontLay">
-             <item>
-              <widget class="QLabel" name="fontLab">
-               <property name="text">
-                <string>Font:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFontComboBox" name="font"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" name="fontSizeLay">
-             <item>
-              <widget class="QLabel" name="fontSizeLab">
-               <property name="text">
-                <string>Font size:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="fontSize"/>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="Line" name="fontAndFontSizeLayAndOutlineAndColorLaySeperator">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="outlineAndColorLay">
-           <item>
-            <layout class="QVBoxLayout" name="outlineLay">
-             <item>
-              <widget class="QCheckBox" name="useOutline">
-               <property name="text">
-                <string>Outline</string>
-               </property>
-               <property name="checked">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="outlineWidthLab">
-               <property name="text">
-                <string>Outline width:</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QSpinBox" name="outlineWidth"/>
-             </item>
-             <item>
-              <widget class="QPushButton" name="outlineColorChart">
-               <property name="text">
-                <string>Outline color</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="Line" name="line_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="textPosLay">
-         <item>
-          <widget class="QLabel" name="textPosLab">
-           <property name="text">
-            <string>Text position:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QGridLayout" name="arrowLay">
-           <item row="2" column="1">
-            <widget class="QPushButton" name="down">
-             <property name="text">
-              <string>/</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="1">
-            <widget class="QPushButton" name="up">
-             <property name="text">
-              <string>^</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
-            <widget class="QPushButton" name="left">
-             <property name="text">
-              <string>&lt;</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="2">
-            <widget class="QPushButton" name="right">
-             <property name="text">
-              <string>&gt;</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="QLabel" name="xLab">
-           <property name="text">
-            <string>X:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="xBox"/>
-         </item>
-         <item>
-          <widget class="QLabel" name="yLab">
-           <property name="text">
-            <string>Y:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="yBox"/>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="Line" name="textPosAndFillingSep">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="fillingLay">
-       <item>
-        <layout class="QVBoxLayout" name="solidLay">
-         <item>
-          <widget class="QRadioButton" name="solidBox">
-           <property name="text">
-            <string>Solid Color</string>
-           </property>
-           <property name="checked">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pickSolidColor">
-           <property name="text">
-            <string>Pick Color</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="Line" name="fillingSep1">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="gradLay">
-         <item>
-          <widget class="QRadioButton" name="gradientBox">
-           <property name="text">
-            <string>Gradient</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pickGradColor2">
-           <property name="text">
-            <string>Pick Upper Color</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="pickGradColor1">
-           <property name="text">
-            <string>Pick Lower Color</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="switchGradColors">
-           <property name="text">
-            <string>Switch Colors</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="gradTransPointText">
-           <property name="text">
-            <string>Gradient transistion:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="gradTransPoint"/>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </item>
-   <item row="3" column="1">
-    <widget class="QPushButton" name="aboutButton">
-     <property name="text">
-      <string>About</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="aboutLabel">
-     <property name="text">
-      <string>Pokemon Shiny Hunting Counter v1.0</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <layout class="QFormLayout" name="spacingLay">
+        <item row="0" column="0" colspan="2">
+         <spacer name="spacing">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="encounterIncreasers">
+        <item>
+         <widget class="QPushButton" name="encounterButton">
+          <property name="text">
+           <string>Encounter</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="encounterBox"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="prettyMuchEverythingLay">
+      <item>
+       <layout class="QHBoxLayout" name="optionsLay">
+        <item>
+         <layout class="QVBoxLayout" name="fontAndFontSizeAndOutlineAndColorLay">
+          <item>
+           <layout class="QHBoxLayout" name="fontAndFontSizeLay">
+            <item>
+             <layout class="QVBoxLayout" name="fontLay">
+              <item>
+               <widget class="QLabel" name="fontLab">
+                <property name="text">
+                 <string>Font:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QFontComboBox" name="font"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="fontSizeLay">
+              <item>
+               <widget class="QLabel" name="fontSizeLab">
+                <property name="text">
+                 <string>Font size:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="fontSize"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="Line" name="fontAndFontSizeLayAndOutlineAndColorLaySeperator">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="outlineAndColorLay">
+            <item>
+             <layout class="QVBoxLayout" name="outlineLay">
+              <item>
+               <widget class="QCheckBox" name="useOutline">
+                <property name="text">
+                 <string>Outline</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="outlineWidthLab">
+                <property name="text">
+                 <string>Outline width:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="outlineWidth"/>
+              </item>
+              <item>
+               <widget class="QPushButton" name="outlineColorChart">
+                <property name="text">
+                 <string>Outline color</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="line_5">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="textPosLay">
+          <item>
+           <widget class="QLabel" name="textPosLab">
+            <property name="text">
+             <string>Text position:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QGridLayout" name="arrowLay">
+            <item row="2" column="1">
+             <widget class="QPushButton" name="down">
+              <property name="text">
+               <string>/</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QPushButton" name="up">
+              <property name="text">
+               <string>^</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="left">
+              <property name="text">
+               <string>&lt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="2">
+             <widget class="QPushButton" name="right">
+              <property name="text">
+               <string>&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="xLab">
+            <property name="text">
+             <string>X:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="xBox"/>
+          </item>
+          <item>
+           <widget class="QLabel" name="yLab">
+            <property name="text">
+             <string>Y:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="yBox"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="Line" name="textPosAndFillingSep">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="fillingLay">
+        <item>
+         <layout class="QVBoxLayout" name="solidLay">
+          <item>
+           <widget class="QRadioButton" name="solidBox">
+            <property name="text">
+             <string>Solid Color</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pickSolidColor">
+            <property name="text">
+             <string>Pick Color</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="Line" name="fillingSep1">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="gradLay">
+          <item>
+           <widget class="QRadioButton" name="gradientBox">
+            <property name="text">
+             <string>Gradient</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pickGradColor2">
+            <property name="text">
+             <string>Pick Upper Color</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pickGradColor1">
+            <property name="text">
+             <string>Pick Lower Color</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="switchGradColors">
+            <property name="text">
+             <string>Switch Colors</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="gradTransPointText">
+            <property name="text">
+             <string>Gradient transistion:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="gradTransPoint"/>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="aboutSep">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="aboutLay">
+      <item>
+       <widget class="QLabel" name="aboutLabel">
+        <property name="text">
+         <string>Pokemon Shiny Hunting Counter v1.0</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="aboutButton">
+        <property name="text">
+         <string>About</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>496</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>

@@ -12,7 +12,7 @@ TARGET = Shiny-Pokemon-Counter
 TEMPLATE = app
 
 QMAKE_CXXFLAGS += -Wunused-parameter
-
+                                             ^
 SOURCES += main.cpp\
         counterwindow.cpp \
     gradient.cpp \
@@ -27,8 +27,9 @@ HEADERS  += counterwindow.h \
     gradient.h \
     about.h
 
-FORMS    += counterwindow.ui \
-    about.ui
+FORMS    += \
+    about.ui \
+    counterwindow.ui
 
 DISTFILES +=
 
