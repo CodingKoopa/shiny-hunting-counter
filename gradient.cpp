@@ -3,7 +3,7 @@
 #include "gradient.h"
 
 //when gradient radio button is checked
-void CounterWindow::on_gradientBox_clicked()
+void Counter::on_gradientBox_clicked()
 {
     //refresh
     update();
@@ -23,26 +23,21 @@ QBrush makeGradient(int x, int y, int transitionPoint, QColor gradColor1, QColor
 }
 
 //gradient color 1
-void CounterWindow::on_pickGradColor1_clicked()
+void Counter::on_pickGradColor1_clicked()
 {
     //open color window
     gradColor1 = QColorDialog::getColor(Qt::black, this);
 }
 
 //gradient color 2
-void CounterWindow::on_pickGradColor2_clicked()
+void Counter::on_pickGradColor2_clicked()
 {
     //open color window
     gradColor2 = QColorDialog::getColor(Qt::black, this);
 }
 
-void CounterWindow::on_gradTransPoint_valueChanged(int arg1)
-{
-    //refresh
-    update();
-}
-
-void CounterWindow::on_switchGradColors_clicked()
+//switch button
+void Counter::on_switchGradColors_clicked()
 {
     //make temporary colors for swapping
     QColor color1Orig;
@@ -54,6 +49,13 @@ void CounterWindow::on_switchGradColors_clicked()
     gradColor1 = color2Orig;
     gradColor2 = color1Orig;
 
+    //refresh
+    update();
+}
+
+//gradient spin box
+void Counter::on_gradTransPoint_valueChanged(int arg1)
+{
     //refresh
     update();
 }

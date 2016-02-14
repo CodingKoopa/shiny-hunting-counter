@@ -3,7 +3,7 @@
 
 #include <QBrush>
 
-#include "counterwindow.h"
+#include "counter.h"
 
 QBrush makeGradient(int x, int y, int transitionPoint, QColor gradColor1, QColor gradColor2);
 

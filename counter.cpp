@@ -1,16 +1,13 @@
 #include <QPainter>
-#include <QPainterPath>
-#include <QPainterPathStroker>
-#include <QColorDialog>
 
-#include "counterwindow.h"
-#include "ui_counterwindow.h"
+#include "counter.h"
+#include "ui_Counter.h"
 #include "about.h"
 #include "gradient.h"
 
-CounterWindow::CounterWindow(QWidget *parent) :
+Counter::Counter(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::CounterWindow)
+    ui(new Ui::Counter)
 {
     //set up ui
     ui->setupUi(this);
@@ -37,24 +34,21 @@ CounterWindow::CounterWindow(QWidget *parent) :
 
     //reset count
     count = 0;
-
-    //get rid of help bar
-    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
-CounterWindow::~CounterWindow()
+Counter::~Counter()
 {
     delete ui;
 }
 
-//PAINTING :OOOOOO
-void CounterWindow::paintEvent(QPaintEvent *event)
+//painting
+void Counter::paintEvent(QPaintEvent *event)
 {
     //make the canvas
     QPainter canvas(this);
 
     //turn on anti-aliasing (higher quality)
-    canvas.setRenderHints(QPainter::Antialiasing, QPainter::HighQualityAntialiasing);
+    canvas.setRenderHints(QPainter::HighQualityAntialiasing);
 
     //grab font info
     QFont font = ui->font->currentText();
@@ -67,11 +61,8 @@ void CounterWindow::paintEvent(QPaintEvent *event)
     //draw the text
     canvas.drawPath(textPath);
 
-    //set the font
-    canvas.setFont(font);
-
     //gradient
-    if(ui->gradientBox->isChecked() == true)
+    if(ui->gradientBox->isChecked())
     {
         //fill in the text using the pattern
         canvas.fillPath(textPath, makeGradient(x, y, ui->gradTransPoint->value(), gradColor1, gradColor2));
@@ -88,11 +79,8 @@ void CounterWindow::paintEvent(QPaintEvent *event)
     }
 
     //outline
-    if (ui->useOutline->isChecked() == true)
+    if (ui->useOutline->isChecked())
     {
-        //make brush, grab color(TODO: rename that variable)
-        QBrush brush(color);
-
         //make stroke path
         QPainterPathStroker outlineStrokePath;
         //set width of stroke path
@@ -103,14 +91,20 @@ void CounterWindow::paintEvent(QPaintEvent *event)
         //use outside stroke instead of center
         QPainterPath finalStroke = outline.subtracted(textPath);
 
+        //grab color for outline
+        QBrush brush(outlineColor);
+
         //fill in the path
         canvas.fillPath(finalStroke, brush);
     }
 }
 
 //about button
-void CounterWindow::on_aboutButton_clicked()
+void Counter::on_aboutButton_clicked()
 {
+    //create about window
     About *aboutWindow = new About();
+
+    //show
     aboutWindow->show();
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CounterWindow</class>
+ <class>Counter</class>
  <widget class="QMainWindow" name="CounterWindow">
   <property name="geometry">
    <rect>

@@ -1,8 +1,8 @@
-#include "counterwindow.h"
-#include "ui_counterwindow.h"
+#include "counter.h"
+#include "ui_Counter.h"
 
 //x spin box
-void CounterWindow::on_xBox_valueChanged(int arg1)
+void Counter::on_xBox_valueChanged(int arg1)
 {
     //set new x pos
     x = arg1;
@@ -11,7 +11,7 @@ void CounterWindow::on_xBox_valueChanged(int arg1)
     update();
 }
 
-void CounterWindow::on_yBox_valueChanged(int arg1)
+void Counter::on_yBox_valueChanged(int arg1)
 {
     //set new y pos
     y = arg1;
@@ -21,7 +21,7 @@ void CounterWindow::on_yBox_valueChanged(int arg1)
 }
 
 //arrow buttons
-void CounterWindow::on_up_clicked()
+void Counter::on_up_clicked()
 {
     //decrement y
     y--;
@@ -33,7 +33,7 @@ void CounterWindow::on_up_clicked()
     update();
 }
 
-void CounterWindow::on_left_clicked()
+void Counter::on_left_clicked()
 {
     //decrement x
     x--;
@@ -45,7 +45,7 @@ void CounterWindow::on_left_clicked()
     update();
 }
 
-void CounterWindow::on_right_clicked()
+void Counter::on_right_clicked()
 {
     //increment x
     x++;
@@ -57,7 +57,7 @@ void CounterWindow::on_right_clicked()
     update();
 }
 
-void CounterWindow::on_down_clicked()
+void Counter::on_down_clicked()
 {
     //increment y
     y++;

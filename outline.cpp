@@ -1,10 +1,10 @@
 #include <QColorDialog>
 
-#include "counterwindow.h"
-#include "ui_counterwindow.h"
+#include "counter.h"
+#include "ui_Counter.h"
 
 //outline checkbox
-void CounterWindow::on_useOutline_clicked(bool checked)
+void Counter::on_useOutline_clicked(bool checked)
 {
     //if unckecked, grey out width and color
     if (checked == false)
@@ -25,7 +25,7 @@ void CounterWindow::on_useOutline_clicked(bool checked)
 }
 
 //outline width
-void CounterWindow::on_outlineWidth_valueChanged(int arg1)
+void Counter::on_outlineWidth_valueChanged(int arg1)
 {
     //set new outline width
     outlineWidth = arg1;
@@ -34,10 +34,10 @@ void CounterWindow::on_outlineWidth_valueChanged(int arg1)
     update();
 }
 
-void CounterWindow::on_outlineColorChart_clicked()
+void Counter::on_outlineColorChart_clicked()
 {
     //open color window
-    color = QColorDialog::getColor(Qt::black, this);
+    outlineColor = QColorDialog::getColor(Qt::black, this);
 
     //refresh
     update();

@@ -1,8 +1,8 @@
-#include "counterwindow.h"
-#include "ui_counterwindow.h"
+#include "counter.h"
+#include "ui_Counter.h"
 
-//buddon
-void CounterWindow::on_encounterButton_clicked()
+//button
+void Counter::on_encounterButton_clicked()
 {
     //increment count
     count++;
@@ -14,8 +14,8 @@ void CounterWindow::on_encounterButton_clicked()
     update();
 }
 
-//spinny box
-void CounterWindow::on_encounterBox_valueChanged(int arg1)
+//spin box
+void Counter::on_encounterBox_valueChanged(int arg1)
 {
     //set count
     count = arg1;

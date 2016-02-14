@@ -1,12 +1,16 @@
-#include "counterwindow.h"
 #include <QApplication>
-#include <QIcon>
+
+#include "counter.h"
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    CounterWindow w;
-    w.show();
+    //program init
+    QApplication program(argc, argv);
 
-    return a.exec();
+    //show counter window
+    Counter counterWindow;
+    counterWindow.show();
+
+    //run
+    return program.exec();
 }

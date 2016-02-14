@@ -11,25 +11,27 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = Shiny-Pokemon-Counter
 TEMPLATE = app
 
-QMAKE_CXXFLAGS += -Wunused-parameter
+QMAKE_CXXFLAGS += -Wno-unused-variable
+QMAKE_CXXFLAGS += -Wno-unused-parameter
                                              ^
 SOURCES += main.cpp\
-        counterwindow.cpp \
     gradient.cpp \
     textpos.cpp \
     font.cpp \
     outline.cpp \
     about.cpp \
     encounter.cpp \
-    solid.cpp
+    solid.cpp \
+    counter.cpp
 
-HEADERS  += counterwindow.h \
+HEADERS  += \
     gradient.h \
-    about.h
+    about.h \
+    counter.h
 
 FORMS    += \
     about.ui \
-    counterwindow.ui
+    counter.ui
 
 DISTFILES +=
 

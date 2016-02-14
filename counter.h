@@ -1,22 +1,22 @@
-#ifndef COUNTERWINDOW_H
-#define COUNTERWINDOW_H
+#ifndef Counter_H
+#define Counter_H
 
 #include <QMainWindow>
 
 namespace Ui {
-class CounterWindow;
+class Counter;
 }
 
-class CounterWindow : public QMainWindow
+class Counter : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit CounterWindow(QWidget *parent = 0);
-    ~CounterWindow();
+    explicit Counter(QWidget *parent = 0);
+    ~Counter();
 
 private:
-    Ui::CounterWindow *ui;
+    Ui::Counter *ui;
     int font;
     int x;
     int y;
@@ -25,7 +25,7 @@ private:
 
     int outlineWidth;
 
-    QColor color;
+    QColor outlineColor;
 
     QColor solidColor;
 
@@ -49,12 +49,12 @@ private slots:
     void on_gradientBox_clicked();
     void on_pickGradColor1_clicked();
     void on_pickGradColor2_clicked();
-    void on_gradTransPoint_valueChanged(int arg1);
     void on_switchGradColors_clicked();
+    void on_gradTransPoint_valueChanged(int arg1);
 
     //outline.cpp:
-    void on_outlineColorChart_clicked();
     void on_useOutline_clicked(bool checked);
+    void on_outlineColorChart_clicked();
     void on_outlineWidth_valueChanged(int arg1);
 
     //solid.cpp:
@@ -69,8 +69,8 @@ private slots:
     void on_encounterButton_clicked();
     void on_encounterBox_valueChanged(int arg1);
 
-    //counterwindow.cpp:
+    //counter.cpp:
     void on_aboutButton_clicked();
 };
 
-#endif // COUNTERWINDOW_H
+#endif // Counter_H
