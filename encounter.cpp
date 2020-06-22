@@ -1,5 +1,5 @@
 #include "counter.h"
-#include "ui_Counter.h"
+#include "ui_counter.h"
 
 //button
 void Counter::on_encounterButton_clicked()

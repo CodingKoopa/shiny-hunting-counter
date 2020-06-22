@@ -1,7 +1,7 @@
 #include <QColorDialog>
 
 #include "counter.h"
-#include "ui_Counter.h"
+#include "ui_counter.h"
 
 //outline checkbox
 void Counter::on_useOutline_clicked(bool checked)

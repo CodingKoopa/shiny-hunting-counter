@@ -1,5 +1,5 @@
 #include "counter.h"
-#include "ui_Counter.h"
+#include "ui_counter.h"
 
 //x spin box
 void Counter::on_xBox_valueChanged(int arg1)

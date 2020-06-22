@@ -1,7 +1,8 @@
 #include <QPainter>
+#include <QPainterPath>
 
 #include "counter.h"
-#include "ui_Counter.h"
+#include "ui_counter.h"
 #include "about.h"
 #include "gradient.h"
 
