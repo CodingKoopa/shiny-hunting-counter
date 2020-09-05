@@ -42,6 +42,19 @@ Counter::~Counter()
     delete ui;
 }
 
+std::string Counter::formatComma(int value)
+{
+	std::string numStr = std::to_string(value);
+	int insertAt = numStr.length() - 3;
+	while(insertAt > 0)
+	{
+		numStr.insert(insertAt, ", ");
+		insertAt -= 3;
+	}
+
+	return numStr;
+}
+
 //painting
 void Counter::paintEvent(QPaintEvent *event)
 {
@@ -57,7 +70,9 @@ void Counter::paintEvent(QPaintEvent *event)
 
     //make the text path
     QPainterPath textPath;
-    textPath.addText(x, y, font, QString::number(count));
+    std::string strNum = formatComma(count);
+    QString numComma = QString::fromStdString(strNum);
+    textPath.addText(x, y, font, numComma);
 
     //draw the text
     canvas.drawPath(textPath);

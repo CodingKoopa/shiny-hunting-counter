@@ -2,7 +2,7 @@
 #define Counter_H
 
 #include <QMainWindow>
-
+#include <string.h>
 namespace Ui {
 class Counter;
 }
@@ -31,6 +31,8 @@ private:
 
     QColor gradColor1;
     QColor gradColor2;
+
+    std::string formatComma(int value);
 
 protected:
     void paintEvent(QPaintEvent *event);
