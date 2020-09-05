@@ -7,6 +7,11 @@ void Counter::on_encounterButton_clicked()
     //increment count
     count++;
 
+    if(count % 5 == 0)
+    {
+	    saveCount(count);
+    }
+
     //set spinbox value
     ui->encounterBox->setValue(count);
 

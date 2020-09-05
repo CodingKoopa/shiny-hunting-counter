@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <string.h>
+#include <fstream>
 namespace Ui {
 class Counter;
 }
@@ -33,6 +34,10 @@ private:
     QColor gradColor2;
 
     std::string formatComma(int value);
+
+    void saveCount(int value);
+
+    int loadCount();
 
 protected:
     void paintEvent(QPaintEvent *event);

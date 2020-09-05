@@ -34,7 +34,7 @@ Counter::Counter(QWidget *parent) :
     solidColor = Qt::black;
 
     //reset count
-    count = 0;
+    count = loadCount();
 }
 
 Counter::~Counter()
@@ -53,6 +53,34 @@ std::string Counter::formatComma(int value)
 	}
 
 	return numStr;
+}
+
+void Counter::saveCount(int value)
+{
+	std::ofstream file("save.txt");
+	if(file.is_open())
+	{
+		file<<value<<std::endl;
+		file.close();
+	}
+}
+
+int Counter::loadCount()
+{
+	std::string line;
+	std::ifstream file("save.txt");
+
+	if(file.is_open())
+	{
+		getline(file, line);
+		file.close();
+		return std::stoi(line);
+	}
+
+	else
+	{
+		return 0;
+	}
 }
 
 //painting
