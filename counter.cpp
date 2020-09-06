@@ -10,15 +10,15 @@ Counter::Counter(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Counter)
 {
-    //set up ui
+    // set up ui
     ui->setupUi(this);
 
-    //set window icon and title
+    // set window icon and title
     this->setWindowIcon(QIcon(":/icon.png"));
     this->setWindowTitle("Shiny Hunting Counter");
 
-    //set maximum spinbox
-    //afaik, 2147483647 is the largest 32-bit number
+    // set maximum spinbox
+    // afaik, 2147483647 is the largest 32-bit number
     ui->encounterBox->setMaximum(2147483647);
     ui->fontSize->setMaximum(2147483647);
     ui->outlineWidth->setMaximum(2147483647);
@@ -26,14 +26,14 @@ Counter::Counter(QWidget *parent) :
     ui->yBox->setMaximum(2147483647);
     ui->gradTransPoint->setMaximum(2147483647);
 
-    //set default values
+    // set default values
     ui->fontSize->setValue(30);
     ui->xBox->setValue(50);
     ui->yBox->setValue(50);
     ui->outlineWidth->setValue(2);
     solidColor = Qt::black;
 
-    //reset count
+    // reset count
     count = loadCount();
 }
 
@@ -83,72 +83,71 @@ int Counter::loadCount()
 	}
 }
 
-//painting
+// painting
 void Counter::paintEvent(QPaintEvent *event)
 {
-    //make the canvas
+    // make the canvas
     QPainter canvas(this);
 
-    //turn on anti-aliasing (higher quality)
+    // turn on anti-aliasing (higher quality)
     canvas.setRenderHints(QPainter::HighQualityAntialiasing);
 
-    //grab font info
+    // grab font info
     QFont font = ui->font->currentText();
     font.setPointSize(ui->fontSize->value());
 
-    //make the text path
+    // make the text path
     QPainterPath textPath;
     std::string strNum = formatComma(count);
     QString numComma = QString::fromStdString(strNum);
     textPath.addText(x, y, font, numComma);
 
-    //draw the text
+    // draw the text
     canvas.drawPath(textPath);
 
-    //gradient
+    // gradient
     if(ui->gradientBox->isChecked())
     {
-        //fill in the text using the pattern
+        // fill in the text using the pattern
         canvas.fillPath(textPath, makeGradient(x, y, ui->gradTransPoint->value(), gradColor1, gradColor2));
     }
-
-    //default to solid color
+    // default to solid color
     else
     {
-        //make pattern based off of solid color (default is black)
+        // make pattern based off of solid color (default is black)
         QBrush pattern(solidColor);
 
-        //fill in the text using the pattern
+        // fill in the text using the pattern
         canvas.fillPath(textPath, pattern);
     }
 
-    //outline
+    // outline
     if (ui->useOutline->isChecked())
     {
-        //make stroke path
+        // make stroke path
         QPainterPathStroker outlineStrokePath;
-        //set width of stroke path
+        // set width of stroke path
         outlineStrokePath.setWidth(ui->outlineWidth->value());
-        //make path based off of stroke path
+        // make path based off of stroke path
         QPainterPath outline(outlineStrokePath.createStroke(textPath));
 
-        //use outside stroke instead of center
+        // use outside stroke instead of center
         QPainterPath finalStroke = outline.subtracted(textPath);
 
-        //grab color for outline
+        // grab color for outline
         QBrush brush(outlineColor);
 
-        //fill in the path
+        // fill in the path
         canvas.fillPath(finalStroke, brush);
     }
 }
 
-//about button
+// about button
 void Counter::on_aboutButton_clicked()
 {
-    //create about window
+    // create about window
     About *aboutWindow = new About();
 
-    //show
+    // show
     aboutWindow->show();
 }

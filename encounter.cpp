@@ -1,10 +1,10 @@
 #include "counter.h"
 #include "ui_counter.h"
 
-//button
+// button
 void Counter::on_encounterButton_clicked()
 {
-    //increment count
+    // increment count
     count++;
 
     if(count % 5 == 0)
@@ -12,19 +12,19 @@ void Counter::on_encounterButton_clicked()
 	    saveCount(count);
     }
 
-    //set spinbox value
+    // set spinbox value
     ui->encounterBox->setValue(count);
 
-    //refresh
+    // refresh
     update();
 }
 
-//spin box
+// spin box
 void Counter::on_encounterBox_valueChanged(int arg1)
 {
-    //set count
+    // set count
     count = arg1;
 
-    //refresh
+    // refresh
     update();
 }

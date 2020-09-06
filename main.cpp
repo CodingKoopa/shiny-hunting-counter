@@ -4,13 +4,13 @@
 
 int main(int argc, char *argv[])
 {
-    //program init
+    // program init
     QApplication program(argc, argv);
 
-    //show counter window
+    // show counter window
     Counter counterWindow;
     counterWindow.show();
 
-    //run
+    // run
     return program.exec();
 }

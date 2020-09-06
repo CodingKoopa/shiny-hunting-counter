@@ -43,7 +43,7 @@ protected:
     void paintEvent(QPaintEvent *event);
 
 private slots:   
-    //textpos.cpp:
+    // textpos.cpp:
     void on_xBox_valueChanged(int arg1);
     void on_yBox_valueChanged(int arg1);
 
@@ -52,31 +52,31 @@ private slots:
     void on_right_clicked();
     void on_down_clicked();
 
-    //gradient.cpp:
+    // gradient.cpp:
     void on_gradientBox_clicked();
     void on_pickGradColor1_clicked();
     void on_pickGradColor2_clicked();
     void on_switchGradColors_clicked();
     void on_gradTransPoint_valueChanged(int arg1);
 
-    //outline.cpp:
+    // outline.cpp:
     void on_useOutline_clicked(bool checked);
     void on_outlineColorChart_clicked();
     void on_outlineWidth_valueChanged(int arg1);
 
-    //solid.cpp:
+    // solid.cpp:
     void on_pickSolidColor_clicked();
     void on_solidBox_clicked();
 
-    //font.cpp:
+    // font.cpp:
     void on_font_currentIndexChanged(const QString &arg1);
     void on_fontSize_valueChanged(int arg1);
 
-    //encounter.cpp:
+    // encounter.cpp:
     void on_encounterButton_clicked();
     void on_encounterBox_valueChanged(int arg1);
 
-    //counter.cpp:
+    // counter.cpp:
     void on_aboutButton_clicked();
 };
 

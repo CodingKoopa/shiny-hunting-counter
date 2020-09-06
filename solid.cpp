@@ -2,15 +2,15 @@
 
 #include <QColorDialog>
 
-//solid color
+// solid color
 void Counter::on_pickSolidColor_clicked()
 {
-    //open color window
+    // open color window
     solidColor = QColorDialog::getColor(Qt::black, this);
 }
 
 void Counter::on_solidBox_clicked()
 {
-    //refresh
+    // refresh
     update();
 }
