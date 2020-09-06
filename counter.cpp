@@ -41,6 +41,7 @@ Counter::Counter(QWidget *parent) :
 
 Counter::~Counter()
 {
+    saveCount(count);
     delete ui;
 }
 
