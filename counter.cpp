@@ -1,3 +1,5 @@
+#include <limits>
+
 #include <QPainter>
 #include <QPainterPath>
 
@@ -18,13 +20,13 @@ Counter::Counter(QWidget *parent) :
     this->setWindowTitle("Shiny Hunting Counter");
 
     // set maximum spinbox
-    // afaik, 2147483647 is the largest 32-bit number
-    ui->encounterBox->setMaximum(2147483647);
-    ui->fontSize->setMaximum(2147483647);
-    ui->outlineWidth->setMaximum(2147483647);
-    ui->xBox->setMaximum(2147483647);
-    ui->yBox->setMaximum(2147483647);
-    ui->gradTransPoint->setMaximum(2147483647);
+    constexpr size_t MAX = std::numeric_limits<int>::max();
+    ui->encounterBox->setMaximum(MAX);
+    ui->fontSize->setMaximum(MAX);
+    ui->outlineWidth->setMaximum(MAX);
+    ui->xBox->setMaximum(MAX);
+    ui->yBox->setMaximum(MAX);
+    ui->gradTransPoint->setMaximum(MAX);
 
     // set default values
     ui->fontSize->setValue(30);
