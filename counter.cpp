@@ -48,7 +48,7 @@ std::string Counter::formatComma(int value)
 {
 	std::string numStr = std::to_string(value);
 	int insertAt = numStr.length() - 3;
-	while(insertAt > 0)
+	while (insertAt > 0)
 	{
 		numStr.insert(insertAt, ", ");
 		insertAt -= 3;
@@ -60,9 +60,9 @@ std::string Counter::formatComma(int value)
 void Counter::saveCount(int value)
 {
 	std::ofstream file("save.txt");
-	if(file.is_open())
+	if (file.is_open())
 	{
-		file<<value<<std::endl;
+		file << value << std::endl;
 		file.close();
 	}
 }
@@ -72,13 +72,12 @@ int Counter::loadCount()
 	std::string line;
 	std::ifstream file("save.txt");
 
-	if(file.is_open())
+	if (file.is_open())
 	{
 		getline(file, line);
 		file.close();
 		return std::stoi(line);
 	}
-
 	else
 	{
 		return 0;
@@ -108,7 +107,7 @@ void Counter::paintEvent(QPaintEvent *event)
     canvas.drawPath(textPath);
 
     // gradient
-    if(ui->gradientBox->isChecked())
+    if (ui->gradientBox->isChecked())
     {
         // fill in the text using the pattern
         canvas.fillPath(textPath, makeGradient(x, y, ui->gradTransPoint->value(), gradColor1, gradColor2));

@@ -7,7 +7,7 @@ void Counter::on_encounterButton_clicked()
     // increment count
     count++;
 
-    if(count % 5 == 0)
+    if (count % 5 == 0)
     {
 	    saveCount(count);
     }
