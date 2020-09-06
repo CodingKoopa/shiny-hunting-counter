@@ -77,7 +77,14 @@ int Counter::loadCount()
 	{
 		getline(file, line);
 		file.close();
-		return std::stoi(line);
+        try
+        {
+            return std::stoi(line);
+        }
+        catch (...)
+        {
+            return 0;
+        }
 	}
 	else
 	{
